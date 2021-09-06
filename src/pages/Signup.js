@@ -4,7 +4,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 import Divider from '../components/Divider';
 function Signup() {
-    const history = useHistory();
+    
     return (
         <div className="p-6 w-full bg-gray-200 hover:shadow-md space-y-6 ">
             <h1 className="text-4xl text-center">Sign Up</h1>

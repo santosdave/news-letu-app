@@ -12,21 +12,21 @@
     {
       label: "Home",
       to: "/",
-      icon: "dashboard",
+      icon: "home",
     },
     {
       label: "Technology",
       to: "/technology",
-      icon: "fitness",
+      icon: "technology",
     },
     {
       label: "Politics",
       to: "/politics",
-      icon: "user",
+      icon: "politics",
     },
     {
         label: "Science",
         to: "/science",
-        icon: "user",
+        icon: "science",
       },
   ];
