@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Logo from './NytLogo';
 import Navbar from './Navbar';
-import { Link } from "react-router-dom";
+import { Link, useHistory} from "react-router-dom";
 import { useLocation } from "react-router";
 import { NAV_LINKS } from "../utils/constants";
 import Button from "../components/Button";
 import { getActiveNavLink } from '../utils/utility';
 function HomeLayout({ children}) {
+    const history= useHistory()
     const { pathname } = useLocation();
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const handleMenu = () => {
@@ -15,7 +16,9 @@ function HomeLayout({ children}) {
     useEffect(() => {
         setShowMobileMenu(false);
     }, [pathname]);
-
+    const handleLogout = () => {
+        history.push('/sign-in');
+    };
     return (
         <div className="lg:flex w-screen min-h-screen h-full bg-gray-100">
            <div id="desktop-menu" className="hidden lg:flex bg-white px-4 2xl:px-12 py-10 flex-col items-center justify-between">
@@ -37,7 +40,7 @@ function HomeLayout({ children}) {
                         value=""
                         variant="primary"
                         icon="logout"
-                        
+                        action={handleLogout}
                     />
 
                 </div>

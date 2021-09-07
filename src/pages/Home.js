@@ -20,7 +20,7 @@ function Home() {
                </div>
             </div>
             <main className="lg:flex lg:space-x-10 space-y-5 lg:space-y-0">
-                <section className="max-w-md bg-white  rounded-xl">
+                <section className="max-w-md bg-gray-200  rounded-xl">
                         <div className="p-6 space-y-5">
                             <h2 className="text-3xl text-primary shadow-sm">Top Articles</h2>
                             <div className="space-y-4 h-screen overflow-y-scroll overflow-hidden">
@@ -37,7 +37,7 @@ function Home() {
                         </div>
                         
                 </section>
-                <section className="max-w-md bg-white  rounded-xl">
+                <section className="max-w-md bg-gray-200  rounded-xl">
                         <div className="p-6 space-y-5">
                             <h2 className="text-3xl text-primary shadow-sm">Most Popular</h2>
                             <div className="p-2 space-y-5 h-screen overflow-y-scroll overflow-hidden">
