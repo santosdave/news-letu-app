@@ -21,6 +21,17 @@ function Politics() {
         getArticles();
 
     }, []);
+    useEffect(() => {
+        const getMostPopular = async (section) => {
+            setLoading(true);
+            const res = await axios.get(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+            setMostPopular(res.data.results);
+            setLoading(false);
+          };
+          getMostPopular();
+        
+
+    }, []);
     return (
         <div className="space-y-10 w-full">
         <div className="flex z-50 top-20  lg:justify-between items-center">
@@ -68,12 +79,17 @@ function Politics() {
                     <div className="p-6 space-y-5">
                         <h2 className="text-3xl text-primary shadow-sm">Most Popular</h2>
                         <div className="p-2 space-y-5 h-screen overflow-y-scroll overflow-hidden">
-                            <MostPopular/>
-                            <MostPopular/>
-                            <MostPopular/>
-                            <MostPopular/>
-                            <MostPopular/>
-                            <MostPopular/>
+                                {mostPopular.map(article =>(
+                                    <MostPopular 
+                                    key={article.asset_id}
+                                    src={article.media[0]["media-metadata"][0].url }
+                                    story={article.abstract}
+                                    author={article.byline}
+                                    date={article.updated}
+                                    title={article.title}
+                                    
+                                    />
+                                ))}
                         </div>
                     </div>
                     

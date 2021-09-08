@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../components/Input'
-import { Link } from "react-router-dom";
-import Button from '../components/Button';
 import TopArticle from '../components/Home/TopArticle';
 import MostPopular from '../components/Home/MostPopular';
 import axios from 'axios';
@@ -19,10 +17,22 @@ function Home() {
             setLoading(false);
         };
         getArticles();
+        
+
+    }, []);
+    useEffect(() => {
+        const getMostPopular = async (section) => {
+            setLoading(true);
+            const res = await axios.get(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
+            setMostPopular(res.data.results);
+            setLoading(false);
+          };
+          getMostPopular();
+        
 
     }, []);
     
-    console.log(articles)
+
    
     return (
         <div className="space-y-10 w-full">
@@ -71,12 +81,18 @@ function Home() {
                         <div className="p-6 space-y-5">
                             <h2 className="text-3xl text-primary shadow-sm">Most Popular</h2>
                             <div className="p-2 space-y-5 h-screen overflow-y-scroll overflow-hidden">
-                                <MostPopular/>
-                                <MostPopular/>
-                                <MostPopular/>
-                                <MostPopular/>
-                                <MostPopular/>
-                                <MostPopular/>
+                                {mostPopular.map(article =>(
+                                    <MostPopular 
+                                    key={article.asset_id}
+                                    src={article.media[0]["media-metadata"][0].url }
+                                    story={article.abstract}
+                                    author={article.byline}
+                                    date={article.updated}
+                                    title={article.title}
+                                    
+                                    />
+                                ))}
+                               
                             </div>
                         </div>
                         
