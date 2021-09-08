@@ -6,7 +6,7 @@
   <h1 align="center">A News App</h1>
   <img src="Screenshot1.png" alt="Product Screenshot">
   <p align="center">
-    A web-based News-Accessing application that delivers latest instantaneously.
+    A web-based News-Accessing application that delivers latest News instantaneously.
     <br /><br />
     <a href=""><strong>View Demo »</strong></a>
     <br /><br />
@@ -38,7 +38,7 @@
 
 ### Built With
 * **[React](https://reactjs.org/)**
-* **[tailwindcss](https://socket.io/)**
+* **[Tailwindcss](https://socket.io/)**
 * **[NYC Developer API](https://developer.nytimes.com/)**
 * [Node.js](https://nodejs.org/en/)
 
@@ -69,11 +69,12 @@ Install latest version of npm
 
 ## Usage
 **Creating an Account**
-**NB/Authentcation is yet to be implemented**
+
 ![](Screenshot2.png)
 1. In the login page, click 'Register here'.
 2. Input the necessary fields. Don't worry. It won't take long.
 3. You'll be redirected to the login page. Enter your newly created credentials.
+**NB/Authentication is yet to be implemented**
 
 
 **View Categories Of News**
