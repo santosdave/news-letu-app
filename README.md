@@ -66,7 +66,8 @@ Install latest version of npm
    ```sh
    npm start
    ```
-
+## Notes 
+**NB/Authentcation is yet to be implemented** 
 ## Usage
 **Creating an Account**
 
@@ -74,7 +75,7 @@ Install latest version of npm
 1. In the login page, click 'Register here'.
 2. Input the necessary fields. Don't worry. It won't take long.
 3. You'll be redirected to the login page. Enter your newly created credentials.
-**NB/Authentication is yet to be implemented**
+
 
 
 **View Categories Of News**
