@@ -55,6 +55,8 @@ function Home() {
                                 title={article.headline.main}
                                 author={article.byline.original}
                                 date={article.pub_date}
+                                story={article.snippet}
+                                subTitle={article.subsection_name}
                                 />
                               ))}
                                     
