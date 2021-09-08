@@ -16,7 +16,7 @@ function ArticleDetail() {
         <Card className="flex flex-col justify-between  items-center border-b-2 p-1">
             <h2 className="text-3xl text-primary shadow-sm">{location.state.subTitle}</h2>
             <CardActionArea className="">
-              <CardMedia className="h-screen w-full" title={'wycliffe'} image={location.state.src}/>
+              <CardMedia className="h-screen w-full" title={location.state.author} image={location.state.src}/>
               <CardContent >
                     <div className="flex flex-col  ml-2">
                         <h3 className=" text-xl font-light  truncate ">{location.state.title}</h3>
