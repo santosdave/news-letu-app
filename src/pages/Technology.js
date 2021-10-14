@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import Input from '../components/Input'
-import { Link } from "react-router-dom";
-import Button from '../components/Button';
+/* import { Link } from "react-router-dom";
+import Button from '../components/Button'; */
 import TopArticle from '../components/Technology/TopArticle';
 import MostPopular from '../components/Technology/MostPopular';
 import axios from 'axios';
 function Technology() {
-    const [loading, setLoading] = useState(false);
+    /* const [loading, setLoading] = useState(false); */
     const [articles, setArticles] = useState([]);
     const [mostPopular, setMostPopular]= useState([]);
     useEffect(() => {
         const getArticles = async () => {
-            setLoading(true);
+            /* setLoading(true); */
             const res = await axios.get(` https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Technology")&sort=newest&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
             setArticles(res.data.response.docs);
 
-            setLoading(false);
+            /* setLoading(false); */
         };
         getArticles();
 
     }, []);
     useEffect(() => {
         const getMostPopular = async (section) => {
-            setLoading(true);
+           /*  setLoading(true); */
             const res = await axios.get(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
             setMostPopular(res.data.results);
-            setLoading(false);
+           /*  setLoading(false); */
           };
           getMostPopular();
         
@@ -82,7 +82,7 @@ function Technology() {
                                 {mostPopular.map(article =>(
                                     <MostPopular 
                                     key={article.asset_id}
-                                    src={article.media[0]["media-metadata"][0].url }
+                                   /*  src={article.media[0]["media-metadata"][0].url } */
                                     story={article.abstract}
                                     author={article.byline}
                                     date={article.updated}

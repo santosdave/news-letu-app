@@ -5,16 +5,16 @@ import MostPopular from '../components/Home/MostPopular';
 import axios from 'axios';
 
 function Home() {
-    const [loading, setLoading] = useState(false);
+    /* const [loading, setLoading] = useState(false); */
     const [articles, setArticles] = useState([]);
     const [mostPopular, setMostPopular]= useState([]);
     useEffect(() => {
         const getArticles = async () => {
-            setLoading(true);
+            /* setLoading(true); */
             const res = await axios.get(` https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=section_name:("Arts")&sort=newest&api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
             setArticles(res.data.response.docs);
 
-            setLoading(false);
+           /*  setLoading(false); */
         };
         getArticles();
         
@@ -25,7 +25,7 @@ function Home() {
             setLoading(true);
             const res = await axios.get(`https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=${process.env.REACT_APP_NYTIMES_API_KEY}`);
             setMostPopular(res.data.results);
-            setLoading(false);
+            /* setLoading(false); */
           };
           getMostPopular();
         

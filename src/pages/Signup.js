@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Input from '../components/Input';
 import Button from '../components/Button';
 import Divider from '../components/Divider';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImPause, ImPlay2 } from "react-icons/im";
+import { ImPlay2 } from "react-icons/im";
 import { ICON_PROPS } from "../utils/constants";
 import { RiHome4Line, RiUser3Line } from "react-icons/ri";
 import { IoMdFitness, IoIosRemoveCircleOutline } from "react-icons/io";
